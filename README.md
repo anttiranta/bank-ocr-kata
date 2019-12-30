@@ -1,2 +1,2 @@
 # bank-ocr-kata
-Bank OCR Kata
+Bank OCR Kata attempt.

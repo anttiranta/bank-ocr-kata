@@ -1,2 +1,4 @@
 # bank-ocr-kata
-Bank OCR Kata attempt.
+Bank OCR Kata.
+
+Link: http://codingdojo.org/kata/BankOCR/

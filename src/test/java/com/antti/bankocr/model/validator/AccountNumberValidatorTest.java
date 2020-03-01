@@ -27,6 +27,11 @@ public class AccountNumberValidatorTest {
     }
     
     @Test
+    public void testValidateIllegibleAccountNumber3() {
+        assertFalse(this.accountNumberValidator.isValid("11?10?1?0"));
+    }
+    
+    @Test
     public void testValidateNullAccountNumber() {
         assertFalse(this.accountNumberValidator.isValid(null));
     }

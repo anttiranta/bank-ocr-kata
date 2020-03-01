@@ -48,10 +48,10 @@ public class AccountLinesReaderTest {
                 .append("  ||_  _|  | _||_|  ||_| _|\n")
                 .append("                           \n").toString();
     
-    private final String testLines490067715 = new StringBuilder()
-                .append("    _  _  _  _  _  _     _ \n")
-                .append("|_||_|| || ||_   |  |  ||_ \n")
-                .append("  | _||_||_||_|  |  |  | _|\n")
+    private final String testLines110101100 = new StringBuilder()
+                .append("       _     _        _  _ \n")
+                .append("  |  || |  || |  |  || || |\n")
+                .append("  |  ||_|  ||_|  |  ||_||_|\n")
                 .append("                           \n").toString();
     
     private final String testLines000000051 = new StringBuilder()
@@ -64,6 +64,18 @@ public class AccountLinesReaderTest {
                 .append("    _  _  _  _  _  _     _ \n")
                 .append("|_||_|| || ||_   |  |  | _ \n")
                 .append("  | _||_||_||_|  |  |  | _|\n")
+                .append("                           \n").toString();
+    
+    private final String testLines490067715 = new StringBuilder()
+                .append("    _  _  _  _  _  _     _ \n")
+                .append("|_||_|| || ||_   |  |  ||_ \n")
+                .append("  | _||_||_||_|  |  |  | _|\n")
+                .append("                           \n").toString();
+    
+    private final String testGarbledLines11X10X1X0 = new StringBuilder()
+                .append("       _     _           _ \n")
+                .append("  |  || |  || |     || || |\n")
+                .append("  |  | _|  ||_|  |  ||_||_|\n")
                 .append("                           \n").toString();
     
     private final String testGarbledLines1234X678X = new StringBuilder()
@@ -151,19 +163,6 @@ public class AccountLinesReaderTest {
     }
     
     @Test
-    public void testGetAllAccountLines490067715() throws Exception {
-        AccountLinesReader accountLinesReader = new AccountLinesReader(testLines490067715);
-        List<DigitChunk> allAccountLines = accountLinesReader.getAllAccountLines();
-
-        assertEquals(DEFAULT_SIZE_ERROR_MESSAGE, 1, (long)allAccountLines.size());
-        assertEquals(
-                DEFAULT_ERROR_MESSAGE,
-                testLines490067715,
-                this.convertDigitChunkToString(allAccountLines.get(0))
-        );
-    }
-    
-    @Test
     public void testGetAllAccountLines000000051() throws Exception {
         AccountLinesReader accountLinesReader = new AccountLinesReader(testLines000000051);
         List<DigitChunk> allAccountLines = accountLinesReader.getAllAccountLines();
@@ -177,6 +176,19 @@ public class AccountLinesReaderTest {
     }
     
     @Test
+    public void testGetAllAccountLines110101100() throws Exception {
+        AccountLinesReader accountLinesReader = new AccountLinesReader(testLines110101100);
+        List<DigitChunk> allAccountLines = accountLinesReader.getAllAccountLines();
+
+        assertEquals(DEFAULT_SIZE_ERROR_MESSAGE, 1, (long)allAccountLines.size());
+        assertEquals(
+                DEFAULT_ERROR_MESSAGE,
+                testLines110101100,
+                this.convertDigitChunkToString(allAccountLines.get(0))
+        );
+    }
+    
+    @Test
     public void testGetAllAccountLinesGarbled49006771X() throws Exception {
         AccountLinesReader accountLinesReader = new AccountLinesReader(testGarbledLines49006771X);
         List<DigitChunk> allAccountLines = accountLinesReader.getAllAccountLines();
@@ -185,6 +197,32 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testGarbledLines49006771X,
+                this.convertDigitChunkToString(allAccountLines.get(0))
+        );
+    }
+    
+    @Test
+    public void testGetAllAccountLines490067715() throws Exception {
+        AccountLinesReader accountLinesReader = new AccountLinesReader(testLines490067715);
+        List<DigitChunk> allAccountLines = accountLinesReader.getAllAccountLines();
+
+        assertEquals(DEFAULT_SIZE_ERROR_MESSAGE, 1, (long)allAccountLines.size());
+        assertEquals(
+                DEFAULT_ERROR_MESSAGE,
+                testLines490067715,
+                this.convertDigitChunkToString(allAccountLines.get(0))
+        );
+    }
+    
+    @Test
+    public void testGetAllAccountLinestestGarbled11X10X1X0() throws Exception {
+        AccountLinesReader accountLinesReader = new AccountLinesReader(testGarbledLines11X10X1X0);
+        List<DigitChunk> allAccountLines = accountLinesReader.getAllAccountLines();
+
+        assertEquals(DEFAULT_SIZE_ERROR_MESSAGE, 1, (long)allAccountLines.size());
+        assertEquals(
+                DEFAULT_ERROR_MESSAGE,
+                testGarbledLines11X10X1X0,
                 this.convertDigitChunkToString(allAccountLines.get(0))
         );
     }

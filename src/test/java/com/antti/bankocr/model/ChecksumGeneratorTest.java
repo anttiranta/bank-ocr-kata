@@ -82,28 +82,18 @@ public class ChecksumGeneratorTest {
     }
     
     @Test
+    public void testGenerateForInvalidAccountNumber9999999999() {
+        String accountNumber = "9".repeat(AccountNumberValidator.ACCOUNT_NUMBER_MAX_LENGTH);
+        assertNotEquals(
+                DEFAULT_ERROR_MESSAGE,
+                0,
+                (long)this.checksumGenerator.generateFor(accountNumber)
+        );
+    }
+    
+    @Test
     public void testGenerateFor123456789() {
         String accountNumber = "123456789";
-        assertEquals(
-                DEFAULT_ERROR_MESSAGE,
-                0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
-        );
-    }
-    
-    @Test
-    public void testGenerateFor345882865() {
-        String accountNumber = "345882865";
-        assertEquals(
-                DEFAULT_ERROR_MESSAGE,
-                0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
-        );
-    }
-    
-    @Test
-    public void testGenerateFor457508000() {
-        String accountNumber = "457508000";
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
@@ -122,6 +112,26 @@ public class ChecksumGeneratorTest {
     }
     
     @Test
+    public void testGenerateForInvalidAccountNumber110101100() {
+        String accountNumber = "110101100";
+        assertNotEquals(
+                DEFAULT_ERROR_MESSAGE,
+                0,
+                (long)this.checksumGenerator.generateFor(accountNumber)
+        );
+    }
+    
+    @Test
+    public void testGenerateForInvalidAccountNumber490067715() {
+        String accountNumber = "490067715";
+        assertNotEquals(
+                DEFAULT_ERROR_MESSAGE,
+                0,
+                (long)this.checksumGenerator.generateFor(accountNumber)
+        );
+    }
+    
+    @Test
     public void testGenerateFor490867715() {
         String accountNumber = "490867715";
         assertEquals(
@@ -132,8 +142,28 @@ public class ChecksumGeneratorTest {
     }
     
     @Test
+    public void testGenerateFor457508000() {
+        String accountNumber = "457508000";
+        assertEquals(
+                DEFAULT_ERROR_MESSAGE,
+                0,
+                (long)this.checksumGenerator.generateFor(accountNumber)
+        );
+    }
+    
+    @Test
     public void testGenerateFor711111111() {
         String accountNumber = "711111111";
+        assertEquals(
+                DEFAULT_ERROR_MESSAGE,
+                0,
+                (long)this.checksumGenerator.generateFor(accountNumber)
+        );
+    }
+    
+    @Test
+    public void testGenerateFor345882865() {
+        String accountNumber = "345882865";
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
@@ -160,9 +190,31 @@ public class ChecksumGeneratorTest {
                 (long)this.checksumGenerator.generateFor(accountNumber)
         );
     }
-
+    
     @Test(expected = IllegalArgumentException.class)
     public void testGenerateForMalformedAccountNumber () {
+        String accountNumber = "1" 
+                + DigitsMapper.ILLEGIBLE_OCR_DIGIT 
+                + DigitsMapper.ILLEGIBLE_OCR_DIGIT 
+                + "4"
+                + DigitsMapper.ILLEGIBLE_OCR_DIGIT
+                + "6"
+                + DigitsMapper.ILLEGIBLE_OCR_DIGIT
+                + "09";
+        this.checksumGenerator.generateFor(accountNumber);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void testGenerateForMalformedAccountNumber2 () {
+        String accountNumber = "1234" 
+                + DigitsMapper.ILLEGIBLE_OCR_DIGIT 
+                + "678"
+                + DigitsMapper.ILLEGIBLE_OCR_DIGIT;
+        this.checksumGenerator.generateFor(accountNumber);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testGenerateForMalformedAccountNumber3 () {
         String accountNumber = "86110" 
                 + DigitsMapper.ILLEGIBLE_OCR_DIGIT 
                 + DigitsMapper.ILLEGIBLE_OCR_DIGIT 

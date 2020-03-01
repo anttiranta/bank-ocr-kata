@@ -27,6 +27,11 @@ public class ChecksumValidatorTest {
     }
     
     @Test
+    public void testValidateInvalidChecksum3() {
+        assertFalse(this.checksumValidator.isValid(9));
+    }
+    
+    @Test
     public void testValidateNullChecksum() {
         assertFalse(this.checksumValidator.isValid(null));
     }

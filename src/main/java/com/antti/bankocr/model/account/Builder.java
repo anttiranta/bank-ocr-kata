@@ -30,7 +30,7 @@ public class Builder {
         
         if (accountNumber == null) {
             account = this.createInvalidAccount();
-        } else if (!accountNumber.matches(AccountNumberValidator.ALLOWED_ACCOUNT_NUMBER_REGEX)) {
+        } else if (!accountNumber.matches(AccountNumberValidator.ALLOWED_NUMBERS_RGX)) {
             account = this.createInvalidAccount();
         } else {
             account = (new Account())

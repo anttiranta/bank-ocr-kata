@@ -10,14 +10,15 @@ public class ChecksumGenerator {
     private static final int MODULO = 11;
     
     public Integer generateFor(final String accountNumber) throws IllegalArgumentException {
-        if (accountNumber == null 
-                || !accountNumber.matches(AccountNumberValidator.VALID_ACCOUNT_NUMBER_REGEX)
-        ) {
+        if (!canGenerateFor(accountNumber)) {
             throw new IllegalArgumentException(
                     "Could not generate checksum for account number: " + accountNumber
             );
         }
-        
+        return generate(accountNumber);
+    }
+    
+    private Integer generate(final String accountNumber) {
         int total = 0;
         int base = 1;
         
@@ -25,10 +26,15 @@ public class ChecksumGenerator {
                 .toCharArray();
         
         for (char c : accountNumArrayReversed) {
-            total += (c - '0') * base;
+            total += (c - '0') * base; // old ASCII trick
             base++;
         }
 
         return total % MODULO;
+    }
+    
+    private boolean canGenerateFor(final String accountNumber) {
+        return accountNumber != null 
+                && accountNumber.matches(AccountNumberValidator.ACCOUNT_NUMBER_RGX);
     }
 }

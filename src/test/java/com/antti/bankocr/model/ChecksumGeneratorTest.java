@@ -22,13 +22,13 @@ public class ChecksumGeneratorTest {
     @Test(expected = IllegalArgumentException.class)
     public void testGenerateForInvalidAccountNumber0() {
         String accountNumber = "0";
-        this.checksumGenerator.generateFor(accountNumber);
+        checksumGenerator.generateFor(accountNumber);
     }
     
     @Test(expected = IllegalArgumentException.class)
     public void testGenerateForInvalidAccountNumber1() {
         String accountNumber = "1";
-        this.checksumGenerator.generateFor(accountNumber);
+        checksumGenerator.generateFor(accountNumber);
     }
     
     @Test
@@ -37,7 +37,7 @@ public class ChecksumGeneratorTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -47,7 +47,7 @@ public class ChecksumGeneratorTest {
         assertNotEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -57,7 +57,7 @@ public class ChecksumGeneratorTest {
         assertNotEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -67,7 +67,7 @@ public class ChecksumGeneratorTest {
         assertNotEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -77,7 +77,7 @@ public class ChecksumGeneratorTest {
         assertNotEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -87,7 +87,7 @@ public class ChecksumGeneratorTest {
         assertNotEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -97,7 +97,7 @@ public class ChecksumGeneratorTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -107,7 +107,7 @@ public class ChecksumGeneratorTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -117,7 +117,7 @@ public class ChecksumGeneratorTest {
         assertNotEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -127,7 +127,7 @@ public class ChecksumGeneratorTest {
         assertNotEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -137,7 +137,7 @@ public class ChecksumGeneratorTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -147,7 +147,7 @@ public class ChecksumGeneratorTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -157,7 +157,7 @@ public class ChecksumGeneratorTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -167,7 +167,7 @@ public class ChecksumGeneratorTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -177,7 +177,7 @@ public class ChecksumGeneratorTest {
         assertNotEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -187,7 +187,7 @@ public class ChecksumGeneratorTest {
         assertNotEquals(
                 DEFAULT_ERROR_MESSAGE,
                 0,
-                (long)this.checksumGenerator.generateFor(accountNumber)
+                (long)checksumGenerator.generateFor(accountNumber)
         );
     }
     
@@ -201,7 +201,7 @@ public class ChecksumGeneratorTest {
                 + "6"
                 + DigitsMapper.ILLEGIBLE_OCR_DIGIT
                 + "09";
-        this.checksumGenerator.generateFor(accountNumber);
+        checksumGenerator.generateFor(accountNumber);
     }
     
     @Test(expected = IllegalArgumentException.class)
@@ -210,7 +210,7 @@ public class ChecksumGeneratorTest {
                 + DigitsMapper.ILLEGIBLE_OCR_DIGIT 
                 + "678"
                 + DigitsMapper.ILLEGIBLE_OCR_DIGIT;
-        this.checksumGenerator.generateFor(accountNumber);
+        checksumGenerator.generateFor(accountNumber);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -219,6 +219,6 @@ public class ChecksumGeneratorTest {
                 + DigitsMapper.ILLEGIBLE_OCR_DIGIT 
                 + DigitsMapper.ILLEGIBLE_OCR_DIGIT 
                 + "36";
-        this.checksumGenerator.generateFor(accountNumber);
+        checksumGenerator.generateFor(accountNumber);
     }
 }

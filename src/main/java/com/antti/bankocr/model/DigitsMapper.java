@@ -32,6 +32,6 @@ public class DigitsMapper
     }
     
     public Character map(List<String> digitCanditate) {
-        return this.map(String.join("", digitCanditate));
+        return map(String.join("", digitCanditate));
     }
 }

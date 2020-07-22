@@ -34,7 +34,7 @@ public class BankOcrApplication {
 
     private void process(String inputFileName, final String outputFileName) {
         if (inputFileName == null) {
-            inputFileName = this.getDefaultInputFileName();
+            inputFileName = getDefaultInputFileName();
         }
         
         try {

@@ -18,6 +18,6 @@ public class DigitChunk {
     }
 
     public List<String> getOcrDigits() {
-        return this.ocrDigits;
+        return ocrDigits;
     }
 }

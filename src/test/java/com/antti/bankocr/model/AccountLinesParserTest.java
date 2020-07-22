@@ -34,7 +34,7 @@ public class AccountLinesParserTest {
                 add("   ");
             }
         });
-        this.accountLinesParser.parse(input);
+        accountLinesParser.parse(input);
     }
 
     @Test(expected = InvalidAccountNumberException.class)
@@ -47,7 +47,7 @@ public class AccountLinesParserTest {
                 add("   ");
             }
         });
-        this.accountLinesParser.parse(input);
+        accountLinesParser.parse(input);
     }
 
     @Test
@@ -63,7 +63,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "000000000",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -80,7 +80,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "111111111",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -97,7 +97,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "222222222",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -114,7 +114,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "333333333",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -131,7 +131,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "444444444",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -148,7 +148,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "555555555",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -165,7 +165,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "666666666",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -182,7 +182,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "777777777",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -199,7 +199,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "888888888",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -216,7 +216,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "999999999",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -233,7 +233,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "123456789",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -250,7 +250,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "000000051",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 
@@ -267,7 +267,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "110101100",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
     
@@ -284,7 +284,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "49006771?",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
     
@@ -301,7 +301,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "11?10?1?0",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
     
@@ -315,7 +315,7 @@ public class AccountLinesParserTest {
                 add("   ");
             }
         });
-        this.accountLinesParser.parse(input);
+        accountLinesParser.parse(input);
     }
     
     @Test(expected = InvalidAccountNumberException.class)
@@ -327,7 +327,7 @@ public class AccountLinesParserTest {
                 add("   ");
             }
         });
-        this.accountLinesParser.parse(input);
+        accountLinesParser.parse(input);
     }
 
     @Test(expected = InvalidAccountNumberException.class)
@@ -340,7 +340,7 @@ public class AccountLinesParserTest {
                 add("    ");
             }
         });
-        this.accountLinesParser.parse(input);
+        accountLinesParser.parse(input);
     } 
     
     @Test
@@ -356,7 +356,7 @@ public class AccountLinesParserTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 "1??4?6?09",
-                this.accountLinesParser.parse(input)
+                accountLinesParser.parse(input)
         );
     }
 }

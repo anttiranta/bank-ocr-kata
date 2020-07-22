@@ -29,28 +29,28 @@ public class Builder {
         Account account = null;
         
         if (accountNumber == null) {
-            account = this.createInvalidAccount();
+            account = createInvalidAccount();
         } else if (!accountNumber.matches(AccountNumberValidator.ALLOWED_NUMBERS_RGX)) {
-            account = this.createInvalidAccount();
+            account = createInvalidAccount();
         } else {
             account = (new Account())
                 .setAccountNumber(accountNumber);
         }
         
         try {
-            Integer checksum = this.checksumGenerator.generateFor(accountNumber);
+            Integer checksum = checksumGenerator.generateFor(accountNumber);
             account.setChecksum(checksum);
         } catch(IllegalArgumentException iae) {
         }
         
-        this.validate(account);
+        validate(account);
         return account;
     }
     
     protected void validate(Account account) {
-        if (!this.validAccountNumberValidator.isValid(account.getAccountNumber())) {
+        if (!validAccountNumberValidator.isValid(account.getAccountNumber())) {
             account.setError(Account.ERROR.ILL);
-        } else if (!this.checksumValidator.isValid(account.getChecksum())) {
+        } else if (!checksumValidator.isValid(account.getChecksum())) {
             account.setError(Account.ERROR.ERR);
         } else {
             account.setError(null);

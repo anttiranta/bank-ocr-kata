@@ -21,26 +21,26 @@ public class TextFileWriter extends AbstractWriter implements Writer {
 
     @Override
     public void addLine(final Account account) throws IOException {
-        if (this.br == null && this.fr == null) {
-            this.init();
+        if (br == null && fr == null) {
+            init();
         }
         
         String data = super.getFormattedAccountData(account);
         
         String dataWithNewLine = data + System.getProperty("line.separator");
         
-        this.br.write(dataWithNewLine);
+        br.write(dataWithNewLine);
     }
 
     @Override
     public void close() throws IOException {
-        this.br.close();
-        this.fr.close();
+        br.close();
+        fr.close();
     }
     
     private void init() throws IOException {
-        File file = new File(this.outputFileName);
-        this.fr = new FileWriter(file);
-        this.br = new BufferedWriter(fr);
+        File file = new File(outputFileName);
+        fr = new FileWriter(file);
+        br = new BufferedWriter(fr);
     }
 }

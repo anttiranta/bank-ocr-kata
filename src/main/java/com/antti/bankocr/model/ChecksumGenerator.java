@@ -26,7 +26,7 @@ public class ChecksumGenerator {
                 .toCharArray();
         
         for (char c : accountNumArrayReversed) {
-            total += (c - '0') * base; // old ASCII trick
+            total += Character.getNumericValue(c) * base;
             base++;
         }
 

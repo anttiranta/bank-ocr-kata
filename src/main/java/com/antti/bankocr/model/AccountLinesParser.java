@@ -25,7 +25,7 @@ public class AccountLinesParser {
     }
 
     public String parse(DigitChunk digitChunk) throws AccountNumberParseException, InvalidAccountNumberException {
-        if (!this.accountLinesValidator.isValid(digitChunk)) {
+        if (!accountLinesValidator.isValid(digitChunk)) {
             throw new InvalidAccountNumberException("Malformed account number");
         }
 
@@ -38,10 +38,10 @@ public class AccountLinesParser {
 
         for (List<String> chunk : chunks) {
             try {
-                List<List<String>> parts = this.explode(chunk);
+                List<List<String>> parts = explode(chunk);
 
                 for (List<String> part : parts) {
-                    strBuilder.append(this.digitsMapper.map(part));
+                    strBuilder.append(digitsMapper.map(part));
                 }
             } catch (IllegalArgumentException iae) {
                 throw new AccountNumberParseException("Could not parse account number");

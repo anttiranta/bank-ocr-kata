@@ -19,7 +19,7 @@ public class Account {
     private boolean validated = false;
 
     public String getAccountNumber() {
-        return this.accountNumber;
+        return accountNumber;
     }
 
     public Account setAccountNumber(String accountNumber) {
@@ -28,7 +28,7 @@ public class Account {
     }
 
     public Integer getChecksum() {
-        return this.checksum;
+        return checksum;
     }
 
     public Account setChecksum(Integer checksum) {
@@ -37,7 +37,7 @@ public class Account {
     }
 
     public ERROR getError() {
-        return this.error;
+        return error;
     }
     
     public Account setError(ERROR error){
@@ -46,7 +46,7 @@ public class Account {
     }
 
     public boolean isValid() {
-        return this.error == null && this.validated == true;
+        return error == null && validated == true;
     }
     
     public Account markAsValidated(boolean validated){

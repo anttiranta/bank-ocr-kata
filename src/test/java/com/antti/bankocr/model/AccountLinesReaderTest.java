@@ -93,7 +93,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testLines000000000,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
     
@@ -106,7 +106,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testLines111111111,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
     
@@ -119,7 +119,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testLines222222222,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
     
@@ -132,7 +132,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testLines888888888,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
     
@@ -145,7 +145,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testLines999999999,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
     
@@ -158,7 +158,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testLines123456789,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
     
@@ -171,7 +171,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testLines000000051,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
     
@@ -184,7 +184,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testLines110101100,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
     
@@ -197,7 +197,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testGarbledLines49006771X,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
     
@@ -210,7 +210,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testLines490067715,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
     
@@ -223,7 +223,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testGarbledLines11X10X1X0,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
     
@@ -236,7 +236,7 @@ public class AccountLinesReaderTest {
         assertEquals(
                 DEFAULT_ERROR_MESSAGE,
                 testGarbledLines1234X678X,
-                this.convertDigitChunkToString(allAccountLines.get(0))
+                convertDigitChunkToString(allAccountLines.get(0))
         );
     }
 

@@ -32,13 +32,13 @@ public class AccountLinesReader {
         int i = 0;
         while (i++ < MAX_ENTRIES_READ_ITERATIONS) {
             try {
-                DigitChunk digitChunk = this.getNextAccountLines();
+                DigitChunk digitChunk = getNextAccountLines();
                 if (digitChunk == null) {
                     break;
                 }
                 accountLines.add(digitChunk);
             } catch (LogicException le) {
-                accountLines.add(this.createEmptyDigitChunk());
+                accountLines.add(createEmptyDigitChunk());
             }
         }
 
@@ -56,7 +56,7 @@ public class AccountLinesReader {
         List<String> ocrDigits = new ArrayList<>();
 
         for (int i = 0; i < DigitChunk.ENTRY_LINES_AMOUNT; i++) {
-            String line = this.reader.readLine();
+            String line = reader.readLine();
             
             if (line != null) {
                 for (String digits : String.format(

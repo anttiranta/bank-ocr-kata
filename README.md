@@ -1,4 +1,4 @@
-# Bank OCR Kata.
+# Bank OCR Kata
 
 ## Requirements
 
@@ -26,4 +26,4 @@ checksum calculation:
 664371495 ERR
 86110??36 ILL
 ```
-*ie the file has one account number per row. If some characters are illegible, they are replaced by a ?. In the case of a wrong checksum, or illegible number, this is noted in a second column indicating status.
+* ie the file has one account number per row. If some characters are illegible, they are replaced by a ?. In the case of a wrong checksum, or illegible number, this is noted in a second column indicating status.

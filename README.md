@@ -8,8 +8,8 @@
      | _| _||_||_ |_   ||_||_|
      ||_  _|  | _||_|  ||_| _|
 ```
-⋅⋅* Each entry is 4 lines long, and each line has 27 characters. The first 3 lines of each entry contain an account number written using pipes and underscores, and the fourth line is blank. Each account number should have 9 digits, all of which should be in the range 0-9. A normal file contains around 500 entries.
-⋅⋅* Task is to write a program that can take this file and parse it into actual account numbers.
+* Each entry is 4 lines long, and each line has 27 characters. The first 3 lines of each entry contain an account number written using pipes and underscores, and the fourth line is blank. Each account number should have 9 digits, all of which should be in the range 0-9. A normal file contains around 500 entries.
+* Task is to write a program that can take this file and parse it into actual account numbers.
 
 2. A valid account number has a valid checksum. Validity of account numbers must be ensured. Checksum can be calculated as follows:
 ```  
@@ -26,4 +26,4 @@ checksum calculation:
 664371495 ERR
 86110??36 ILL
 ```
-⋅⋅*ie the file has one account number per row. If some characters are illegible, they are replaced by a ?. In the case of a wrong checksum, or illegible number, this is noted in a second column indicating status.
+*ie the file has one account number per row. If some characters are illegible, they are replaced by a ?. In the case of a wrong checksum, or illegible number, this is noted in a second column indicating status.
